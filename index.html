@@ -16,6 +16,7 @@
 <body>
   <div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color:#7451f3 ;color: white;">
     <h1> <strong>Historical Weather</strong></h1> </div>
+    <h3>Choose a date, and see the weather on that date for the past 5 years.</h3>
 <div class="row">
   <div class="input-group">
     <span class="input-group-label">Date</span>
@@ -44,11 +45,25 @@
       });
   </script>
 
+    </div>
+  </div>
 
+  <div class="card" style="width: 300px;">
+    <div class="card-divider">
+     Your Results Here!
+    </div>
+    <div class="card-section">
+      <p id=year-1>2019</p>
+      <p id=year-2>2018</p>
+      <br>
+      <!-- <p id=otherAPI></p> -->
+    </div>
 
-    <input class="input-group-field" type="search">
-    <div class="input-group-button">
-      <input type="submit" class="button" value="Submit">
+    <div class="card" id="giphy" style="width: 300px;">
+      <img src="https://via.placeholder.com/150">
+      <div class="card-section">
+        <p>caption?</p>
+      </div>
     </div>
   </div>
 
