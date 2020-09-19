@@ -10,11 +10,10 @@ function getLocId(){
     
     //Select input field for city name (CAUTION OF SPACES in user input)
     var userCity = document.getElementById("location-field").value;  
-    var userDate = document.getElementById("city-field").innerHTML;
+    
     //build URL with new city name
     locQueryURL = "https://api.codetabs.com/v1/proxy?quest=https://www.metaweather.com/api/location/search/?query=" + userCity;    
     console.log(locQueryURL);
-    console.log("User date is: " + userDate);
     $.ajax({
            
         datatype: "json",
