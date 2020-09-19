@@ -43,3 +43,17 @@ function findWeatherData(){
     }
 }
         
+// display image
+var imageTag = "snow"
+var giphyURL = "https://api.giphy.com/v1/gifs/random?api_key=573RMs6M2ej5kQQ7SE5GvGLev4dCDD2Q&tag" + imageTag + "&rating=g"
+function getGiphy(){
+
+    $.ajax({
+           
+        url: giphyURL,
+        method: "GET" 
+    })
+        .then(function(response){
+           console.log(response);         
+        });         
+}
