@@ -7,6 +7,11 @@
     <title>Foundation for Sites</title>
     <link rel="stylesheet" href="assets/css/foundation.css">
     <link rel="stylesheet" href="button.css">
+
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
   </head>
 <body>
   <div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color:#7451f3 ;color: white;">
@@ -14,7 +19,11 @@
 <div class="row">
   <div class="input-group">
     <span class="input-group-label">Date</span>
+
+    <input class="input-group-field" type="date" id="date-field">
+
     <input class="input-group-field" type="date">
+
     <div class="input-group-button">
       <input type="submit" class="button" value="Submit">
     </div>
@@ -22,6 +31,21 @@
 
   <div class="input-group">
     <span class="input-group-label">Location</span>
+
+    <input class="input-group-field" type="search" id="location-field">
+    <div class="input-group-button">
+      <input id="submit-btn" type="submit" class="button" value="Submit">
+    </div>
+  </div>
+
+  <script>
+      $("#submit-btn").on("click", function(){
+        getLocId();
+      });
+  </script>
+
+
+
     <input class="input-group-field" type="search">
     <div class="input-group-button">
       <input type="submit" class="button" value="Submit">
