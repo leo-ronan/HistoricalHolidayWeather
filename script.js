@@ -6,13 +6,13 @@ var locQueryURL = "https://api.codetabs.com/v1/proxy?quest=https://www.metaweath
 var userDate;
 var userDateFixed;
 var year = "", month = "", day = "";
-
+var responseList = [];
 //WHEN #test is clicked, getLocId is ran with userCity being pulled from input #userCity
 function getLocId() {
 
     //Select input field for city name (CAUTION OF SPACES in user input)
 
-    var userCity = document.getElementById("location-field").value;
+    var userCity = document.getElementById("location-field").value;  
     userDate = document.getElementById("date-field").value;
 
     //build URL with new city name
@@ -29,17 +29,31 @@ function getLocId() {
             var id = response[0].woeid;
             woeid = id;
             console.log("Woeid for " + userCity + " is " + id);
-            findWeatherData();
-
+            clearInfo();
+            dateFixer();
+            getGiphy();
+            findWeatherData(0);
         });
 }
 
+function clearInfo(){
+    for (var i = 0; i < 5; i++){
+        $("#year-" + i).html("");
+        userDateFixed = "";
+        year = "";
+        month = "";
+        day = "";
+        responseList = [];
+        userDate = document.getElementById("date-field").value;
+    }
+}
 
-function findWeatherData() {
-    dateFixer();
-    getGiphy();
-    for (var i = 0; i < 1; i++) {
-        queryURL = "https://api.codetabs.com/v1/proxy?quest=https://www.metaweather.com/api/location/" + woeid + "/" + userDate;
+
+
+function findWeatherData(a){
+
+    if (a < 5){
+        queryURL = "https://api.codetabs.com/v1/proxy?quest=https://www.metaweather.com/api/location/" + woeid + "/" + (year-a) + "/" + month + "/" + day;
 
         $.ajax({
 
@@ -49,13 +63,22 @@ function findWeatherData() {
         })
 
             .then(function (response) {
-
-
-                console.log(response[0]);
+                responseList.push(response[0]);
+                console.log(responseList);
+                    function weatherInfo(b){
+                        listItemId = "year-" + b;
+                        console.log(listItemId);
+                        var temp = ((responseList[b].max_temp * 1.8) + 32);
+                        var wState = responseList[b].weather_state_name;
+                        $("#" + listItemId).append(" " + (year-b) + " / " + temp.toFixed(2) + "F / " + wState);
+                    }
+                    weatherInfo(a);
+                    a++;
+                    findWeatherData(a);
+                
             });
     }
 }
-
 
 // select giphy
 function getGiphy() {
