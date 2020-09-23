@@ -19,13 +19,18 @@ As an event planner, I want to have an idea of what weather patterns might be li
 * GIPHY API was used to add a seasonal image to the results page, to create a more enjoyable user experience.
 
 ## Project Development Link:
+* https://github.com/leo-ronan/HistoricalWeather
 
 ## Deployed Project Site:
+https://leo-ronan.github.io/HistoricalWeather/
 
 * Image of Deployed Site:
+![image](https://user-images.githubusercontent.com/68358265/94075709-aebb8480-fdc9-11ea-972e-24a4c56a4e64.png)
 
 ## Credits:
 * MetaWeather API:  https://www.metaweather.com/api/
 * GIPHY API: https://developers.giphy.com/
 * Foundation components were utilized in this project:  https://get.foundation/index.html
 * JQuery was utilized for this project:  https://jquery.com/
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./assets.license.txt)The8Team
