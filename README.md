@@ -25,6 +25,7 @@ As an event planner, I want to have an idea of what weather patterns might be li
 https://leo-ronan.github.io/HistoricalWeather/
 
 * Image of Deployed Site:
+![image](https://user-images.githubusercontent.com/68358265/94075709-aebb8480-fdc9-11ea-972e-24a4c56a4e64.png)
 
 ## Credits:
 * MetaWeather API:  https://www.metaweather.com/api/
